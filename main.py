@@ -1,16 +1,16 @@
-# This is a sample Python script.
-
-# Press ⌘⏎ to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+import osmnx as ox
+import matplotlib.pyplot as plt
+import networkx as nx
+import plotly.graph_objects as go
+import numpy as np
+import geopandas as gp
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm!!')
+#ox.plot_graph(ox.graph_from_place('Denmark'))
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+graph = ox.graph_from_point((55.5733495, 12.2280125), dist=500, network_type='all',simplify=True)
+#nodes, edges = ox.graph_to_gdfs(graph)
+nodes = graph.nodes()
+G = graph.edges
+ox.plot_graph(G)
+plt.show()
