@@ -26,7 +26,7 @@ def find_nodes_of_interest(G,origin,destinations):
     return paths
 
 
-cmap = create_cmap()
+
 
 ################# ALLE TAGS: https://wiki.openstreetmap.org/wiki/Map_features
 # Define city/cities
